@@ -134,8 +134,26 @@ console.log(unescape('text'));
 console.log(unescape('%20'));
 console.log(unescape('abc%26%25'));
 
+// Default paramenters
+function sayHi3(name = "World") {
+  console.log('Hello' + name)
+}
+sayHi3('hello');
 
+// Rest parameter
+let sayHi5 = function greet(messageGreet, ...names) {
+  console.log(messageGreet + ' everyone!');
+  names.forEach(name => console.log('Hi ' + name));
+}
+sayHi5('Welcome', 'Jorge', 'Olga', 'Alejandra', 'Veronica');
 
+// Spread operator
+function display(char1, char2, char3, char4, ...others) {
+  console.log(others)
+  console.log(char1, char2, char3, char4);
+}
+let letters = 'abcdefghijklm';
+display(...letters)
 
 
 
