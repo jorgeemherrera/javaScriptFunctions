@@ -73,4 +73,16 @@ let message4 = {
 
 message4.regularFunction();
 message4.arrowFunction();
-console.log(this)
+console.log(this);
+
+// call()
+
+let person1 = {name: 'Jorge', age: 29}
+let person2 = {name: 'Olga', age: 63}
+
+let sayHi = function() {
+  console.log('Hi ' + this.name);
+}
+
+sayHi.call(person1);
+sayHi.call(person2);
