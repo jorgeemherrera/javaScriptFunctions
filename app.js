@@ -86,3 +86,57 @@ let sayHi = function() {
 
 sayHi.call(person1);
 sayHi.call(person2);
+
+// apply()
+function introduction(name, profession) {
+  console.log(`My name is ${name} and I am a ${profession}.`);
+  console.log(this);
+}
+introduction('Jorge', 'Web Developer');
+introduction.apply(undefined, ['Olga', 'Dressmaker']);
+introduction.apply(undefined, ['Veronica', 'Bacteriologist']);
+
+// bind()
+
+let person11 = {name: 'Mary',
+                getName: function() {
+                  return this.name;
+                }
+};
+let person22 = { name: 'Jhon'};
+let getNameCopy = person11.getName.bind(person22);
+console.log(getNameCopy())
+
+// Built-in Functions
+
+// eval
+let x = 1;
+let y = 2;
+console.log(eval('x + y + 2'));
+
+// parseInt
+console.log(parseInt('F', 16));
+console.log(parseInt('15', 100));
+console.log(parseInt('Hi', 10));
+
+// parseFloat
+console.log(parseFloat('3.99'));
+console.log(parseFloat('3.99e-1'));
+console.log(parseFloat(''));
+
+// escape
+console.log(escape('text'));
+console.log(escape(' '));
+console.log(escape('abc&%'));
+
+// unescape
+console.log(unescape('text'));
+console.log(unescape('%20'));
+console.log(unescape('abc%26%25'));
+
+
+
+
+
+
+
